@@ -2,10 +2,9 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 
-# Configuração inicial da página
 st.set_page_config(page_title="Dashboard Livance", layout="wide")
 
-# Adicionar CSS para ajustar o espaçamento do logo
+
 st.markdown(
     """
     <style>
@@ -20,11 +19,11 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Cabeçalho com espaçamento ajustado
+
 st.markdown('<div class="logo-container"><img src="https://livance.com.br/livance-logo.svg" width="150"></div>', unsafe_allow_html=True)
 st.title("Dashboard de Retenção - Livance")
 
-# Reduzir o espaçamento do layout
+
 st.markdown(
     """
     <style>
@@ -41,7 +40,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Slide 1: Introdução
+
 st.header("Introdução")
 st.markdown(
     """
@@ -54,7 +53,7 @@ st.markdown(
     """
 )
 
-# Slide 2: Hipóteses Levantadas
+
 st.header("Hipóteses Levantadas")
 st.markdown(
     """
@@ -66,7 +65,7 @@ st.markdown(
     """
 )
 
-# Slide 3: Análises Realizadas
+
 st.header("Análises Realizadas")
 st.markdown(
     """
@@ -78,7 +77,7 @@ st.markdown(
     """
 )
 
-# Slide 4: Principais Problemas Identificados
+
 st.header("Principais Problemas Identificados")
 st.markdown(
     """
@@ -90,7 +89,7 @@ st.markdown(
     """
 )
 
-# Slide 5: Proposta de Solução
+
 st.header("Proposta de Solução")
 st.markdown(
     """
@@ -108,7 +107,7 @@ st.markdown(
     """
 )
 
-# Slide 6: Detalhamento do Processo
+
 st.header("Detalhamento do Processo")
 st.markdown(
     """
@@ -120,7 +119,7 @@ st.markdown(
     """
 )
 
-# Slide 7: Ferramentas Utilizadas
+
 st.header("Ferramentas Utilizadas")
 st.markdown(
     """
@@ -130,7 +129,7 @@ st.markdown(
     """
 )
 
-# Slide 8: Recomendações
+
 st.header("Recomendações")
 st.markdown(
     """
@@ -141,7 +140,7 @@ st.markdown(
     """
 )
 
-# Slide 9: Resultados Esperados
+
 st.header("Resultados Esperados")
 st.markdown(
     """
@@ -152,7 +151,7 @@ st.markdown(
     """
 )
 
-# Slide 10: Conclusão
+
 st.header("Conclusão")
 st.markdown(
     """
@@ -161,18 +160,18 @@ st.markdown(
     """
 )
 
-# Dados simulados para comparação com sliders
+
 st.header("Comparação Antes e Depois")
 
-# Sliders para ajustar os valores de "Antes"
+
 retencao_antes = st.slider("Taxa de Retenção Antes (%)", min_value=0, max_value=100, value=20)
 churn_antes = st.slider("Churn Antes (%)", min_value=0.0, max_value=10.0, value=4.0, step=0.1)
 
-# Sliders para ajustar os valores de "Depois"
+
 retencao_depois = st.slider("Taxa de Retenção Depois (%)", min_value=0, max_value=100, value=30)
 churn_depois = st.slider("Churn Depois (%)", min_value=0.0, max_value=10.0, value=3.5, step=0.1)
 
-# Dados simulados para comparação
+
 dados = {
     "Métrica": ["Taxa de Retenção", "Churn"],
     "Antes (%)": [retencao_antes, churn_antes],
@@ -181,26 +180,26 @@ dados = {
 
 df = pd.DataFrame(dados)
 
-# Gráfico de barras comparativo
+
 fig = go.Figure()
 
-# Adicionar barras para "Antes"
+
 fig.add_trace(go.Bar(
     x=df["Métrica"],
     y=df["Antes (%)"],
     name="Antes",
-    marker_color="#031B4E"  # Azul escuro (cor do logo Livance)
+    marker_color="#031B4E"  
 ))
 
-# Adicionar barras para "Depois"
+
 fig.add_trace(go.Bar(
     x=df["Métrica"],
     y=df["Depois (%)"],
     name="Depois",
-    marker_color="#00658A"  # Azul claro (cor do logo Livance)
+    marker_color="#00658A" 
 ))
 
-# Configurar layout do gráfico
+
 fig.update_layout(
     title="Comparação de Taxa de Retenção e Churn (Antes vs. Depois)",
     xaxis_title="Métrica",
@@ -209,10 +208,10 @@ fig.update_layout(
     template="plotly_white"
 )
 
-# Exibir o gráfico no Streamlit
+
 st.plotly_chart(fig, use_container_width=True)
 
-# Adicionar rodapé
+
 st.markdown(
     """
     <style>
