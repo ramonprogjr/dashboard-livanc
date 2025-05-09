@@ -100,7 +100,7 @@ st.markdown(
        - Identificar padrões em tempo real.  
     2. **Automação de Comunicação:**  
        - Implementar um chatbot no WhatsApp para contato imediato após o pedido de cancelamento.  
-       - Integração com ferramentas como Twilio ou Zenvia.  
+       - Integração com ferramentas como Twilio ou Zapier.  
     3. **Segmentação de Clientes:**  
        - Criar clusters com base em motivos de cancelamento, tempo de atividade e categoria de motivo.  
     4. **Treinamento do Time:**  
